@@ -1,0 +1,125 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background: radial-gradient(circle, rgba(46,44,44,1) 0%, rgba(101,43,26,1) 50%, rgba(46,44,44,1) 100%);
+}
+
+.text
+{
+  padding: 30px;
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 12em;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-align: center;
+  text-shadow:
+  1px 1px 1px #919191,
+  1px 2px 1px #919191,
+  1px 3px 1px #919191,
+  1px 4px 1px #919191,
+  1px 5px 1px #919191,
+  1px 6px 1px #919191,
+  1px 7px 1px #919191,
+  1px 8px 1px #919191,
+  1px 9px 1px #919191,
+  1px 10px 1px #919191,
+  1px 18px 6px rgba(16,16,16,0.4),
+  1px 22px 10px rgba(16,16,16,0.2),
+  1px 25px 35px rgba(16,16,16,0.2),
+  1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.layer
+{
+  perspective: 600px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow:hidden;
+  height: 500px;
+}
+
+.box
+{
+  position: relative;
+	width: 200px;
+	height: 200px;
+	transform-style:preserve-3d;
+	margin:100px auto;
+	animation: turn 5s infinite linear;
+}
+
+.box:hover
+{
+  animation-play-state: paused;
+}
+
+.edge
+{
+  position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  opacity: .5;
+}
+
+.edge:hover{
+  opacity: .8;
+}
+
+#edge1
+{
+  background: yellow;
+  transform: translateY(-100px) rotateX(90deg);
+}
+
+#edge2
+{
+  background: gray;
+  transform: translatex(100px) rotateY(-270deg);
+}
+
+#edge3
+{
+  background: purple;
+  transform:translateZ(100px);
+}
+
+#edge4
+{
+  background: red;
+  transform: rotateY(180deg) translateZ(100px);
+  transform-origin: bottom center;
+}
+
+#edge5
+{
+  background: blue;
+  transform: rotatey(90deg) translatex(-100px);
+  transform-origin: center left;
+}
+
+#edge6
+{
+  background: green;
+  transform: rotatex(90deg) translatez(-100px);
+}
+
+@keyframes turn {
+  from{
+    transform: rotateY(0) rotateX(0) rotateZ(0);
+  }
+  to{
+    transform: rotateY(720deg) rotateX(360deg) rotateZ(720deg);
+  }
+}
